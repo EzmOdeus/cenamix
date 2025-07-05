@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Play, Info, Star, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 interface HeroSectionProps {
   movies: Movie[];
@@ -36,10 +37,14 @@ export function HeroSection({ movies }: HeroSectionProps) {
             index === currentMovie ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <img
+          <Image
             src={getBackdropUrl(movie.backdrop_path, 'original')}
             alt={movie.title}
+            fill
             className="w-full h-full object-cover"
+            priority={index === currentMovie}
+            sizes="100vw"
+            draggable={false}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

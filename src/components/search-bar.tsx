@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, X } from "lucide-react";
 import { Movie, searchMovies, getImageUrl } from "@/lib/tmdb";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -116,10 +117,13 @@ export function SearchBar() {
                   onClick={() => setShowResults(false)}
                   className="flex items-center gap-3 p-3 hover:bg-gray-800 rounded-lg transition-colors"
                 >
-                  <img
+                  <Image
                     src={getImageUrl(movie.poster_path, "w92")}
                     alt={movie.title}
+                    width={48}
+                    height={64}
                     className="w-12 h-16 object-cover rounded"
+                    draggable={false}
                   />
                   <div className="flex-1 min-w-0">
                     <h4 className="text-white font-medium truncate">
