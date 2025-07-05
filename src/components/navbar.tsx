@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { Film, Home, Compass, Star, Clock } from 'lucide-react';
 import { SearchBar } from './search-bar';
-import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 
 export function Navbar() {
