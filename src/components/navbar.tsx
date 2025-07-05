@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Film, Home, Compass, Star, Clock } from 'lucide-react';
+import { Film, Home, Compass, Star, Clock, Menu } from 'lucide-react';
 import { SearchBar } from './search-bar';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
@@ -50,13 +50,21 @@ export function Navbar() {
             })}
           </div>
 
-         
 
           {/* Search Bar */}
           <div className="flex items-center gap-4">
             <SearchBar />
           </div>
-          
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={() => setMobileMenuOpen((open) => !open)}
+              className="p-2 rounded-md text-gray-300 hover:text-yellow-400 hover:bg-yellow-500/10 focus:outline-none"
+              aria-label="Open menu"
+            >
+              <Menu className="w-7 h-7" />
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation Drawer */}
