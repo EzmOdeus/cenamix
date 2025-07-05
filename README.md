@@ -1,6 +1,6 @@
-# Cenamix
+# CineMax
 
-Cenamix is a web application for discovering and watching movies, built with Next.js, TypeScript, and Tailwind CSS, and powered by the TMDB API.
+CineMax is a web application for discovering and watching movies, built with Next.js, TypeScript, and Tailwind CSS, and powered by the TMDB API.
 
 ## Features
 - Browse trending, top-rated, upcoming, and latest movies.
@@ -22,8 +22,8 @@ Cenamix is a web application for discovering and watching movies, built with Nex
 ## Getting Started
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/EzmOdeus/cenamix.git
-   cd cenamix
+   git clone https://github.com/EzmOdeus/CineMax.git
+   cd CineMax
    ```
 2. **Install dependencies:**
    ```bash
@@ -42,7 +42,7 @@ Cenamix is a web application for discovering and watching movies, built with Nex
 
 ## Project Structure
 ```
-cenamix/
+CineMax/
 ├── public/                # Images and static assets
 ├── src/
 │   ├── app/               # App pages (Next.js App Router)
@@ -62,7 +62,7 @@ cenamix/
 
 ## Contributing
 - Contributions, suggestions, and bug fixes are welcome!
-- Open an Issue or Pull Request on [GitHub](https://github.com/EzmOdeus/cenamix)
+- Open an Issue or Pull Request on [GitHub](https://github.com/EzmOdeus/CineMax)
 
 ## License
 MIT

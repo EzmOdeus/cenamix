@@ -1,4 +1,25 @@
 import { InfiniteMovieSection } from '@/components/infinite-movie-section';
+import type { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  // You can fetch data here if needed for dynamic SEO
+  return {
+    title: "Top Rated Movies",
+    description: "Explore the top rated movies on CineMax.",
+    openGraph: {
+      title: "Top Rated Movies | CineMax",
+      description: "Explore the top rated movies on CineMax.",
+      url: "https://CineMax.vercel.app/top-rated",
+      siteName: "CineMax",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Top Rated Movies | CineMax",
+      description: "Explore the top rated movies on CineMax.",
+    },
+  };
+}
 
 export default function UpcomingPage() {
   return (

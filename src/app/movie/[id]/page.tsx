@@ -9,6 +9,55 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Star, Calendar, Clock, DollarSign, Play, Users } from 'lucide-react';
 import { MovieSection } from '@/components/movie-section';
+import type { Metadata } from "next";
+
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  try {
+    const movie = await getMovieDetails(params.id);
+    return {
+      title: movie.title,
+      description:
+        movie.overview ||
+        "View detailed information about this movie on CineMax.",
+      openGraph: {
+        title: `${movie.title} | CineMax`,
+        description:
+          movie.overview ||
+          "View detailed information about this movie on CineMax.",
+        siteName: "CineMax",
+        type: "article",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `${movie.title} | CineMax`,
+        description:
+          movie.overview ||
+          "View detailed information about this movie on CineMax.",
+      },
+    };
+  } catch {
+    return {
+      title: "Movie Details",
+      description: "View detailed information about this movie on CineMax.",
+      openGraph: {
+        title: "Movie Details | CineMax",
+        description: "View detailed information about this movie on CineMax.",
+        siteName: "CineMax",
+        type: "article",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: "Movie Details | CineMax",
+        description: "View detailed information about this movie on CineMax.",
+      },
+    };
+  }
+}
 
 export default async function MoviePage({ params }:any) {
   try {
