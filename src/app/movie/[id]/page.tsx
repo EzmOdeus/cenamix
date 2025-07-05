@@ -14,9 +14,7 @@ import type { Metadata } from "next";
 
 export async function generateMetadata({
   params,
-}: {
-  params: { id: string };
-}): Promise<Metadata> {
+}:any): Promise<Metadata> {
   try {
     const movie = await getMovieDetails(params.id);
     return {
