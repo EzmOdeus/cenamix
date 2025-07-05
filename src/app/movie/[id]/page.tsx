@@ -9,9 +9,12 @@ import { Separator } from '@/components/ui/separator';
 import { Star, Calendar, Clock, DollarSign, Play, Users } from 'lucide-react';
 import { MovieSection } from '@/components/movie-section';
 
-type Props = { params: { id: string } };
+type PageProps = {
+  params: { id: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
 
-export default async function MoviePage({ params }: Props) {
+export default async function MoviePage({ params }: PageProps) {
   try {
     const [movie, credits, videos, recommendations, reviewsRes] =
       await Promise.all([
