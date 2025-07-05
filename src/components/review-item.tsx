@@ -1,7 +1,13 @@
 "use client";
 import React from "react";
 
-export function ReviewItem({ review }: { review: any }) {
+type Review = {
+  author: string;
+  content: string;
+  created_at: string | number | Date;
+};
+
+export function ReviewItem({ review }: { review: Review }) {
   const [expanded, setExpanded] = React.useState(false);
   const firstLine = review.content.split("\n")[0];
   const rest = review.content.slice(firstLine.length).trim();

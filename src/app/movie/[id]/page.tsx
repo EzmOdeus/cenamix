@@ -8,7 +8,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Star, Calendar, Clock, DollarSign, Play, Users } from 'lucide-react';
 import { MovieSection } from '@/components/movie-section';
-import { notFound } from 'next/navigation';
 
 type Props = { params: { id: string } };
 
@@ -203,7 +202,20 @@ export default async function MoviePage({ params }: Props) {
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-white mb-6">Reviews</h2>
               <div className="space-y-6">
-                {reviews.map((review: any) => (
+                {reviews.map((review: {
+                  id: string;
+                  author: string;
+                  content: string;
+                  created_at: string;
+                  author_details?: {
+                    name?: string;
+                    username?: string;
+                    avatar_path?: string;
+                    rating?: number;
+                  };
+                  updated_at?: string;
+                  url?: string;
+                }) => (
                   <ReviewItem key={review.id} review={review} />
                 ))}
               </div>

@@ -18,8 +18,8 @@ export function MovieCard({ movie, className }: MovieCardProps) {
   const [imageError, setImageError] = useState(false);
 
   // Support both Movie and TV shape
-  const title = movie.title || (movie as any).name || 'Untitled';
-  const date = movie.release_date || (movie as any).first_air_date || '';
+  const title = movie.title || (typeof (movie as { name?: string }).name === 'string' ? (movie as { name?: string }).name : undefined) || 'Untitled';
+  const date = movie.release_date || (typeof (movie as { first_air_date?: string }).first_air_date === 'string' ? (movie as { first_air_date?: string }).first_air_date : undefined) || '';
 
   return (
     <Link href={`/movie/${movie.id}`}>
