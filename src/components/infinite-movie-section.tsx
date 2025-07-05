@@ -62,10 +62,10 @@ export function InfiniteMovieSection({ title, endpoint, className }: InfiniteMov
   return (
     <section className={`py-8 ${className}`}>
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center ju justify-between mb-6">
           <h2 className="text-3xl font-bold text-white">{title}</h2>
         </div>
-        <div className="flex gap-6 overflow-x-auto scrollbar-hide pb-4 flex-wrap">
+        <div className="flex gap-6 overflow-x-auto justify-center scrollbar-hide pb-4 flex-wrap">
           {movies.map((movie, idx) => (
             <div key={movie.id + '-' + idx} className="flex-none w-72">
               <MovieCard movie={movie} />
